@@ -93,7 +93,7 @@
         }
 
         main {
-            margin-top: 80px;
+            margin-top: 60px;  /* 稍微减小顶部边距 */
             padding: 2rem;
         }
 
@@ -103,7 +103,8 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            padding: 4rem 2rem;  /* 上下padding增加，左右保持不变 */
+            min-height: 600px;  /* 确保最小高度 */
+            padding: 2rem;      /* 改回原来的padding，用min-height来控制高度 */
             background: white;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -123,11 +124,14 @@
             background: var(--light-bg);
             border-radius: 12px;
             overflow: hidden;
+            height: 100%;  /* 添加这行，使其充满父容器高度 */
+            display: flex; /* 添加这行，更好地控制iframe */
+            align-items: center; /* 添加这行，垂直居中 */
         }
 
         .game-preview iframe {
             width: 100%;
-            height: 400px;
+            height: 550px;  /* 增加iframe的高度 */
             border: none;
         }
 
